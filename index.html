@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=º, initial-scale=1.0">
+    <title>Parking SJO</title>
+    <script src="https://kit.fontawesome.com/1ec324e24e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/sidenav.css">
+</head>
+
+<body>
+    <div id="main">
+
+        <header class="header">
+            <div class="centrarContenido contenido">
+                <h1><i class="fas fa-car-side"></i> Parking SJO</h1>
+
+                <nav class="menu">
+                    <a href="#">Comprar Ticket</a>
+                    <a href="#" id="openSideMenu" onclick="openNav()">Iniciar Sesión</a>
+                </nav>
+            </div>
+        </header>
+        <div id="mySidenav" class="sidenav centrarContenido">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <form id="form" class="formulario">
+
+                <label id="form" for="nombreUsuario">Nombre de Usuario</label>
+                <input id="form" type="text" id="nombreUsuario" placeholder="Escribir Usuario" name="uname" require>
+
+                <label id="form" for="psw">Contraseña</label>
+                <input id="form" type="password" placeholder="Ingrese Contraseña" name="psw" required>
+
+                <button id="form" type="submit">Iniciar Sesión</button>
+                <label id="form">
+                    <input id="form" class="check" type="checkbox" checked="checked" name="recordar">Recordarme
+                </label>
+            </form>
+        </div>
+        <div class="fondo">
+            <div class="overlay">
+                <div class="centrarContenido contenido-fondo">
+                    <h2>
+                        Parking SJO
+                        <span>Parqueo Central de San Jose, Reserva tu Espacio Ahora!</span>
+                    </h2>
+                </div>
+
+            </div>
+            <img id="parking" src="imagenes/fondo_estacionamiento.jpg" alt="estacionamiento">
+
+        </div>
+
+        <div class="centrarContenido info-parking">
+            <div class="imagen-parking">
+                <img src="imagenes/infraestructura2.png" alt="parking">
+            </div>
+
+            <div class="informacion">
+                <h2>Parqueo Central de San José</h2>
+                <p class="texto-info">
+                    <span> Desde el 2007, siendo el mejor parqueo de San José
+                    </span>
+                    Fundado por Jose Alberto Porras. El parking SJO cuenta con un total
+                    de 350 espacios donde elegir para que estacione su vehiculo; donde eliges tu fecha
+                    de entrada y salida y pagas con tu tarjeta de debito/credito dependiendo la cantidad
+                    de tiempo que se estacione el vehiculo. Nuestras tarifas empiezan desde $10 la hora.
+                </p>
+            </div>
+        </div>
+
+        <section id="horario" class="horario centrarContenido">
+            <h3><i class="fas fa-clock"></i> Horario Del Parqueo <i class="fas fa-clock"></i></h3>
+            <div class="horario-contenedor">
+                <p>
+                    <span>Siempre estamos disponibles!</span>
+                    De Lunes a Domingo las 24 Horas del Día.
+                </p>
+            </div>
+        </section>
+
+        <div class="centrarContenido">
+            <input class="boton-comprar" type="button" value="Comprar Ticket">
+        </div>
+
+        <section class="ubicacion centrarContenido">
+            <h3>Ubicación y Contacto <i class="fas fa-map-marked-alt"></i></h3>
+            <div class="mapa">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15720.034609116241!2d-84.05653072409679!3d9.933236836350368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e3f14d13a1b5%3A0x55def35dd8fbd62d!2sSan%20Jos%C3%A9%2C%20San%20Pedro%2C%20Costa%20Rica!5e0!3m2!1ses-419!2sus!4v1625371602450!5m2!1ses-419!2sus"
+                    style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div class="contacto">
+                <p id="contacto-info">Estamos para Servirle! <br>
+                    Aceptamos Cualquier Consulta por los Siguientes Medios:</p>
+
+                <p> <i class="fas fa-phone-square-alt"></i> +506 2206 8600</p>
+                <p><i class="fas fa-envelope"></i> parkingsjo@parqueocentral.cr</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Parqueo Central De San José. Todos Los Derechos Reservados</p>
+            <a href="#">Ayuda</a>
+        </footer>
+    </div>
+    <script src="js/sidenav.js"></script>
+</body>
+
+</html>
