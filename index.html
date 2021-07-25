@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=º, initial-scale=1.0">
     <title>Parking SJO</title>
     <script src="https://kit.fontawesome.com/1ec324e24e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/sidenav.css">
@@ -31,12 +32,12 @@
             <form id="form" class="formulario">
 
                 <label id="form" for="nombreUsuario">Nombre de Usuario</label>
-                <input id="form" type="text" id="nombreUsuario" placeholder="Ingrese su Usuario" name="uname" required>
+                <input id="inUser" type="text" placeholder="Ingrese su Usuario" name="uname" required>
 
                 <label id="form" for="psw">Contraseña</label>
-                <input id="form" type="password" placeholder="Ingrese su Contraseña" name="psw" required>
+                <input id="inPass" type="password" placeholder="Ingrese su Contraseña" name="psw" required>
 
-                <button id="form" type="submit">Iniciar Sesión</button>
+                <input style="background-color: cadetblue;" type="button" value="Iniciar Sesion" onclick="iniciarSesion()" id="form">
                 <label id="form">
                     <input id="form" class="check" type="checkbox" checked="checked" name="recordar">Recordarme
                 </label>
@@ -111,6 +112,7 @@
         </footer>
     </div>
     <script src="js/sidenav.js"></script>
+    <script src="js/controlador_Login.js" ></script>
 </body>
 
 </html>

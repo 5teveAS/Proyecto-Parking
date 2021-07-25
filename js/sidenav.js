@@ -23,7 +23,9 @@ document.onclick = function (e) {
   if (e.target.id !== 'mySidenav' &&
     e.target.id !== 'openSideMenu' &&
     e.target.id !== 'nombreUsuario' &&
-    e.target.id !== 'form') {
+    e.target.id !== 'form' &&
+    e.target.id !== 'inUser' &&
+    e.target.id !== 'inPass') {
     closeNav();
   }
 }
