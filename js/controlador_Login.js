@@ -5,7 +5,7 @@ function iniciarSesion() {
 
     var user = cajaUser.value;
     var pass = cajaPass.value;
-    /*Comentario para probar git*/ 
+    /*Comentario probar git*/ 
     $.ajax({
         type: "POST",
         url: "php/modelo_Login.php",
