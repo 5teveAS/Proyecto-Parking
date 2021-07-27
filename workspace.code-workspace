@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\..\\..\\Users\\Steve AS\\Desktop\\5 Cuatri\\AMBIENTE WEB\\Clase 8\\Clase8Steve"
+		},
+		{
+			"path": "..\\..\\S08"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\Users\\Steve AS\\Desktop\\Steve Cursos\\1 - Primer Curso Desarrollo WEB\\PHP 1\\IntroduccionPHP_inicio"
+		},
+		{
+			"path": "..\\..\\S09"
+		},
+		{
+			"path": "..\\..\\S10"
+		},
+		{
+			"name": "proyecto",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"liveServer.settings.multiRootWorkspaceName": "proyecto"
+	}
+}

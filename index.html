@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=º, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parking SJO</title>
     <script src="https://kit.fontawesome.com/1ec324e24e.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -31,15 +31,15 @@
 
             <form id="form" class="formulario">
 
-                <label id="form" for="nombreUsuario">Nombre de Usuario</label>
+                <label id="nombreUsuario" for="inUser">Nombre de Usuario</label>
                 <input id="inUser" type="text" placeholder="Ingrese su Usuario" name="uname" required>
 
-                <label id="form" for="psw">Contraseña</label>
+                <label id="psw" for="psw">Contraseña</label>
                 <input id="inPass" type="password" placeholder="Ingrese su Contraseña" name="psw" required>
 
-                <button id="form" type="submit" onclick="iniciarSesion()">Iniciar Sesión</button>
-                <label id="form">
-                    <input id="form" class="check" type="checkbox" checked="checked" name="recordar">Recordarme
+                <button id="submit" type="submit" onclick="iniciarSesion()">Iniciar Sesión</button>
+                <label id="labelCheck">
+                    <input id="checkbox" class="check" type="checkbox" checked="checked" name="recordar">Recordarme
                 </label>
             </form>
         </div>
