@@ -20,12 +20,18 @@ function openNav() {
 const prueba = document.querySelector('#main');
 
 document.onclick = function (e) {
+  
   if (e.target.id !== 'mySidenav' &&
     e.target.id !== 'openSideMenu' &&
     e.target.id !== 'nombreUsuario' &&
     e.target.id !== 'form' &&
     e.target.id !== 'inUser' &&
-    e.target.id !== 'inPass') {
+    e.target.id !== 'inPass'&&
+    e.target.id !== 'labelCheck' &&
+    e.target.id !== 'submit' &&
+    e.target.id !== 'psw' &&
+    e.target.id !== 'checkbox') {
+      
     closeNav();
   }
 }
