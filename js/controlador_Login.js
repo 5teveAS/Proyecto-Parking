@@ -5,7 +5,7 @@ function iniciarSesion() {
 
     var user = cajaUser.value;
     var pass = cajaPass.value;
-    /*Comentario probar git*/ 
+    /*Comentario probar el github*/ 
     $.ajax({
         type: "POST",
         url: "php/modelo_Login.php",
@@ -22,7 +22,7 @@ function iniciarSesion() {
             }  
         },
         error: function(){
-            alert("Se produjo un problema al ingresar");
+            alert("Se produjo un problema");
         }
 
     });
