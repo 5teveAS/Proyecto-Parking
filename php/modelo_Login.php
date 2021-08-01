@@ -1,6 +1,6 @@
 <?php
 
-$direccion = "localhost:3308";
+$direccion = "localhost";
 $usuarioBD = "root";
 $claveBD = "";
 $bd = "parqueo";
