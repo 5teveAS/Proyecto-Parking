@@ -15,7 +15,7 @@ function iniciarSesion() {
             var respuestaJason = JSON.parse(respuesta); 
 
             if(respuestaJason.success == '1'){
-                $(location).attr('href', 'https://www.google.com');
+                $(location).attr('href', 'php/modelo_reservas.php');
                 
             }else if(respuestaJason.success == '0'){
                 alert ('Datos Incorrectos');
