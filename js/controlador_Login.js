@@ -28,3 +28,27 @@ function iniciarSesion() {
     });
 
 }
+
+
+function registrar() {
+    var cajaUser = document.getElementById('inUser');
+    var cajaPass = document.getElementById('inPass');
+
+    var user = cajaUser.value;
+    var pass = cajaPass.value;
+
+    
+    $.ajax({
+        type: "POST",
+        url: "php/modelo_registrar.php",
+        data: { user: user, pass: pass },
+        success: function (respuesta) {
+            var form = document.getElementById('form'); 
+            var h4 = document.createElement("h4");
+            var contenido = document.createTextNode("Usuario registrado");
+            h4.appendChild(contenido);
+            form.appendChild(h4);
+            h4.style.alignContent(center);
+        }
+    });
+}
