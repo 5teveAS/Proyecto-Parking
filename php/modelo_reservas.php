@@ -15,7 +15,7 @@ $conn =  mysqli_connect('localhost', 'root', '', 'parqueo');
 </head>
 
 <body>
-    <table>
+    <table style="border:2px">
         <div class="tablaDeEspacios">
             <tr>
                 <td>Numero de lugar</td>
@@ -48,26 +48,24 @@ $conn =  mysqli_connect('localhost', 'root', '', 'parqueo');
     <div class="tablaDeIngresoDatos">
         <form>
             <label>Cedula</label><br>
-            <input type="text" name="ced_id"><br><br>
+            <input type="text" name="ced_id" required><br><br>
             <label>Placa</label><br>
-            <input type="text" name="placa"><br><br>
+            <input type="text" name="placa" required><br><br>
             <label>Nombre</label><br>
-            <input type="text" name="nombre"><br><br>
+            <input type="text" name="nombre" required><br><br>
             <label>Apellido</label><br>
-            <input type="text" name="apellido1"><br><br>
+            <input type="text" name="apellido1" required><br><br>
             <label>Telefono</label><br>
-            <input type="text" name="telefono"><br><br>
+            <input type="text" name="telefono" required><br><br>
             <label>Hora de entrada</label><br>
-            <input type="datetime-local" name="horaEntrada"><br><br>
+            <input type="datetime-local" name="horaEntrada" required><br><br>
             <label>Hora de salida</label><br>
-            <input type="datetime-local" name="horaSalida"><br><br>
+            <input type="datetime-local" name="horaSalida" required><br><br>
             <label>Numero de lugar</label><br>
-            <input type="number" name="id_lugar"><br><br>
-            <input type="submit" name="ingresar" value="Ingresar"><br><br>
-            <a href="../index.html">Regresar</a>
+            <input type="number" name="id_lugar" required><br><br>
+            <button type="submit" name="ingresar">Reservar</button><br><br>
 
         </form>
-
     </div>
     <?php
 
