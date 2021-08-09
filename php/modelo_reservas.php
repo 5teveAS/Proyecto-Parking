@@ -71,8 +71,9 @@ $conn =  mysqli_connect('localhost', 'root', '', 'parqueo');
     </div>
     <?php
 
-    $consultaEstado = "SELECT estado from estacionamiento where id_lugar='" . $id_lugar . "';";
+
     if (isset($_GET['ingresar'])) {
+
         $ced = $_GET['ced_id'];
         $placa = $_GET['placa'];
         $nombre = $_GET['nombre'];
@@ -83,7 +84,6 @@ $conn =  mysqli_connect('localhost', 'root', '', 'parqueo');
         $id_lugar = $_GET['id_lugar'];
         $nuevoEstado = "Ocupado";
 
-        $resultadoQ = mysqli_query($conn, $consultaEstado);
         if ($ced != null || $placa != null || $nombre != null) {
             $Reserva = "INSERT INTO infotiquet(ced_id,placa,nombre,apellido1,telefono,horaEntrada,horaSalida,id_lugar) 
         VALUES('" . $ced . "','" . $placa . "','" . $nombre . "','" . $apellido1 . "','" . $telefono . "','" . $horaEntrada . "','" . $horaSalida . "','" . $id_lugar . "')";
