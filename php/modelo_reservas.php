@@ -35,88 +35,70 @@ $conn =  mysqli_connect('localhost', 'root', '', 'parqueo');
             <h2 id="tituloReserva">¡Para reservar un espacio, ingresa tus datos!</h2>
             <form class="formularioReserva">
                 <div class="campo">
-                <label for="cedula">Cédula</label>
-                <input 
-                    type="text"
-                    id="cedula"
-                    name="ced_id"
-                    placeholder="Tu Cédula" 
-                    required>
+                    <label for="cedula">Cédula</label>
+                    <input type="text" id="cedula" name="ced_id" placeholder="Tu Cédula" required>
                 </div>
                 <div class="campo">
-                <label for="placa">Placa</label>
-                <input 
-                    type="text" 
-                    id="placa"
-                    name="placa" 
-                    placeholder="Tu Número de Placa"
-                    required>
+                    <label for="placa">Placa</label>
+                    <input type="text" id="placa" name="placa" placeholder="Tu Número de Placa" required>
                 </div>
                 <div class="campo">
-                <label for="nombre">Nombre</label>
-                <input 
-                    type="text" 
-                    id="nombre"
-                    name="nombre"
-                    placeholder="Tu Nombre" 
-                    required>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre" required>
                 </div>
                 <div class="campo">
-                <label for="apellido">Apellido</label>
-                <input 
-                    type="text" 
-                    id="apellido"
-                    name="apellido1"
-                    placeholder="Tu Apellido" 
-                    required>
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido1" placeholder="Tu Apellido" required>
                 </div>
                 <div class="campo">
-                <label for="telefono">Teléfono</label>
-                <input 
-                    type="text" 
-                    id="telefono"
-                    name="telefono" 
-                    placeholder="Tu Número de Teléfono"
-                    required>
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" id="telefono" name="telefono" placeholder="Tu Número de Teléfono" required>
                 </div>
                 <div class="campo">
-                <label for="horaE">Hora de entrada</label>
-                <input 
-                    type="datetime-local" 
-                    id="horaE"
-                    name="horaEntrada" 
-                    placeholder="Hora de entrada"
-                    required>
+                    <label for="horaE">Hora de entrada</label>
+                    <input type="datetime-local" id="horaE" name="horaEntrada" placeholder="Hora de entrada" required>
                 </div>
 
                 <div class="campo">
-                <label >Hora de salida</label>
-                <input 
-                    type="datetime-local" 
-                    name="horaSalida" 
-                    placeholder="Hora de salida"
-                    required>
+                    <label>Hora de salida</label>
+                    <input type="datetime-local" name="horaSalida" placeholder="Hora de salida" required>
                 </div>
 
-                
+
                 <div class="campo">
-                <label for="lugar">Numero de lugar</label>
-                <input 
-                    type="number" 
-                    id="lugar"
-                    name="id_lugar" 
-                    placeholder="Ingresa el Número de Lugar"
-                    min="1" 
-                    max="20"
-                    required>
+                    <label for="lugar">Numero de lugar</label>
+                    <!-- <input type="number" id="lugar" name="id_lugar" placeholder="Ingresa el Número de Lugar" min="1" max="20" > -->
+
+                    <select name="cliente" class="control">
+                        <?php
+                        $getClientes = "SELECT * FROM estacionamiento where estado='Libre'";
+                        $getClientes1 = mysqli_query($conn, $getClientes);
+                        while ($row = mysqli_fetch_array($getClientes1)) {
+                            $id_lugar = $row['id_lugar'];
+                            $piso = $row['piso'];
+                            $tipoLugar = $row['tipoLugar'];
+                            $estado = $row['estado'];
+
+
+                        ?>
+                            <option value="<?php echo $id_lugar; ?>"><?php echo "Lugar: " . $id_lugar . " Piso: " . $piso . " Tipo: " . $tipoLugar ?></option>
+                        <?php
+                        }
+
+                        ?>
+
+
+
+                    </select>
+
+
+
                 </div>
 
                 <div>
-                <button 
-                    id="boton"
-                    type="submit" 
-                    name="ingresar">Reservar</button>
+                    <button id="boton" type="submit" name="ingresar">Reservar</button>
                 </div>
+
 
             </form>
         </div>
@@ -132,10 +114,14 @@ $conn =  mysqli_connect('localhost', 'root', '', 'parqueo');
             $telefono = $_GET['telefono'];
             $horaEntrada = $_GET['horaEntrada'];
             $horaSalida = $_GET['horaSalida'];
-            $id_lugar = $_GET['id_lugar'];
+            $id_lugar = $_GET['cliente'];
             $nuevoEstado = "Ocupado";
+            $cantidadEspacios = mysqli_query($conn, "SELECT COUNT(estado) from estacionamiento");
 
-            if ($ced != null || $placa != null || $nombre != null) {
+            if ($id_lugar > $cantidadEspacios) {
+
+                echo "alert('Hello! I am an alert box!!');";
+            } elseif ($ced != null || $placa != null || $nombre != null) {
                 $Reserva = "INSERT INTO infotiquet(ced_id,placa,nombre,apellido1,telefono,horaEntrada,horaSalida,id_lugar) 
         VALUES('" . $ced . "','" . $placa . "','" . $nombre . "','" . $apellido1 . "','" . $telefono . "','" . $horaEntrada . "','" . $horaSalida . "','" . $id_lugar . "')";
                 mysqli_query($conn, $Reserva);
@@ -180,7 +166,7 @@ $conn =  mysqli_connect('localhost', 'root', '', 'parqueo');
 
         </div>
     </div>
-    
+
     <script src="../js/reserva.js"></script>
 </body>
 
