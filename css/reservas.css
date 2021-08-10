@@ -1,0 +1,203 @@
+
+:root {
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+
+    --tamañoH1:  40px;
+    --tamañoH2:  20px;
+    --tamañoH3:  20px;
+    
+
+    --primario: #25c4ba;
+    --gris: #e1e1e1;
+    --grisOscuro:#3b3737;
+    --blanco: #ffffff;
+    --negro: #000000;
+    --rojo: #bf3f36;
+}
+
+html {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+* {
+    text-decoration: none;
+    
+}
+body {
+    background-color: var(--blanco);
+}
+body, a {
+    font-family: var(--fuenteHeading);
+    color: var(--primario);
+    
+
+}
+
+.header {
+    background-color: var(--negro);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    nav {
+        text-align: center;
+    }
+}
+@media (min-width: 768px) {
+    .contenedor  {
+        height: 100vh; /*100 viewport height, esto va a hacer que tome toda la altura, que tome toda la ventana grafica*/
+        display: grid;
+        gap: 50px;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+    }
+}
+.header .contenido {
+    padding: 30px 0;
+}
+
+.header.fijo {
+    position: fixed;/*Para que sirva que se queda pagado a la pantalla*/
+    width: 100%;
+    box-shadow: 0 .3rem .4rem #444;
+  }
+
+@media (min-width: 768px) {
+    .header .contenido {
+        display: flex;     
+        justify-content: space-between;
+        align-items: center;         /*Para alinear verticalmente en flex box*/
+    }
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    h1 {
+        margin-bottom: 0px;
+    }
+}
+img {
+    max-width: 100%; /*imagenes responsivas*/
+}
+
+.centrarContenido {
+    max-width: 1200px;
+    width: 95%; /*esto para que cuando el tamano sea menor a 1200px aplican un width del 95%*/
+    margin:  0 auto; /*se centra el contenido.*/
+}
+
+#tituloReserva {
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+#tituloEspacios {
+    margin-bottom: 40px;
+    top: 0;
+    text-align: center;
+    color: var(--grisOscuro);
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+   #tituloReserva {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+   }
+}
+
+.tablaDeIngresoDatos {
+    height: 85%;
+    color: var(--primario);
+    width: 100%;
+}
+
+.formularioReserva{
+    width: 100%;
+    margin
+}
+
+.campo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.campo label {
+    flex: 0 0 100px;
+    color: var(--negro);
+    font-weight: normal;
+    text-align: center;
+}
+
+.campo input {
+    flex: 1;
+    padding: 12.5px;
+    border-radius: 10rem;
+    border: 1px solid var(--gris);
+    width: 80%;
+    
+}
+
+#boton {
+    background-color: var(--primario);
+    
+    color: var(--blanco);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    width: 50%;
+    margin-left: 25%;
+}
+@media (max-width: 768px) {
+    #boton {
+        width: 100%;
+        margin: 0;
+        margin-top: 25px;
+        margin-bottom: 50px;
+    }
+
+    .campo input {
+        width: 50%;
+        
+    }
+    
+}
+#boton:hover {
+    background-color: #1bcfc3;
+    cursor: pointer;
+}
+#boton:active {
+    background-color: #18948c;
+}
+
+ td {
+    border-collapse: collapse;
+    border: 1px solid;
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+}

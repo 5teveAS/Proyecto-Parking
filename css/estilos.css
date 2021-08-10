@@ -354,3 +354,7 @@ input, label {
         row-gap: 15px;
     }
 }
+
+.td {
+    background-color: green;
+}

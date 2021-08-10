@@ -30,6 +30,7 @@ function iniciarSesion() {
 }
 
 
+
 function registrar() {
     var cajaUser = document.getElementById('inUser');
     var cajaPass = document.getElementById('inPass');
