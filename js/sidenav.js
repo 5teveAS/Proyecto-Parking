@@ -22,39 +22,41 @@ const prueba = document.querySelector('#main');
 document.addEventListener('click', function (e) {
 
   const mensajeDiv = document.createElement('DIV');
-  console.log(e.target.value);
+
   if (e.target.type === 'button') {
-    console.log(e.target.type);
+    
     const alerta = document.querySelector('.mensajediv');
+
     if (alerta) {
       mensajeDiv.remove();
-      console.log('ya existe');
       return;
     } else {
       const mensajeAlerta = document.createElement('P');//crear un parrafo en javascript
       mensajeAlerta.textContent = '';
-      mensajeAlerta.textContent = '¡Antes de reservar inicia sesion o registrate!';
+
+      
+      mensajeAlerta.textContent += '¡Antes de reservar inicia sesion o registrate!';
       mensajeAlerta.classList.add('mensajealert');
-  
+
+
       mensajeDiv.classList.add('mensajediv');
-  
+
       mensajeDiv.appendChild(mensajeAlerta);
-  
+
       document.querySelector('#mySidenav').appendChild(mensajeDiv);
       setTimeout(() => {
         mensajeDiv.remove();
-      }, 3000);
+      }, 6000);
     }
-   
-  }
- 
 
-} 
+  }
+
+
+}
 );
 
 document.onclick = function (e) {
 
-  const botonsillo = document.querySelector('#openSideMenu');
 
 
   if (
@@ -63,6 +65,7 @@ document.onclick = function (e) {
     e.target.id !== 'openSideMenu' &&
     e.target.id !== 'nombreUsuario' &&
     e.target.id !== 'form' &&
+    e.target.id !== 'inReg' &&
     e.target.id !== 'inUser' &&
     e.target.id !== 'inPass' &&
     e.target.id !== 'labelCheck' &&

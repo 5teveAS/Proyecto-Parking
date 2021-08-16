@@ -1,5 +1,5 @@
 <?php
-$conn =  mysqli_connect('localhost', 'root', '', 'parqueo');
+$conn =  mysqli_connect('localhost:3308', 'root', '', 'parqueo');
 
 
 
@@ -15,6 +15,8 @@ $conn =  mysqli_connect('localhost', 'root', '', 'parqueo');
     <script src="https://kit.fontawesome.com/1ec324e24e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/reservas.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
     <title>Reservar Espacios</title>
 </head>
 
@@ -81,7 +83,7 @@ $conn =  mysqli_connect('localhost', 'root', '', 'parqueo');
 
 
                         ?>
-                            <option value="<?php echo $id_lugar; ?>"><?php echo "Lugar: " . $id_lugar . " Piso: " . $piso . " Tipo: " . $tipoLugar ?></option>
+                            <option value="<?php echo $id_lugar; ?>"><?php echo "Lugar: " . $id_lugar . "  |  Piso: " . $piso . "  |  Tipo: " . $tipoLugar ?></option>
                         <?php
                         }
 
@@ -123,51 +125,62 @@ $conn =  mysqli_connect('localhost', 'root', '', 'parqueo');
                 echo "alert('Hello! I am an alert box!!');";
             } elseif ($ced != null || $placa != null || $nombre != null) {
                 $Reserva = "INSERT INTO infotiquet(ced_id,placa,nombre,apellido1,telefono,horaEntrada,horaSalida,id_lugar) 
-        VALUES('" . $ced . "','" . $placa . "','" . $nombre . "','" . $apellido1 . "','" . $telefono . "','" . $horaEntrada . "','" . $horaSalida . "','" . $id_lugar . "')";
+                VALUES('" . $ced . "','" . $placa . "','" . $nombre . "','" . $apellido1 . "','" . $telefono . "','" . $horaEntrada . "','" . $horaSalida . "','" . $id_lugar . "')";
                 mysqli_query($conn, $Reserva);
                 $updateEstacionamiento = "UPDATE estacionamiento
-        SET estado = '" . $nuevoEstado . "'
-        WHERE id_lugar = '" . $id_lugar . "';";
+                SET estado = '" . $nuevoEstado . "'
+                WHERE id_lugar = '" . $id_lugar . "';";
                 mysqli_query($conn, $updateEstacionamiento);
+                echo "<script>";
+                echo "console.log('exito');";
+                echo "</script>";
             }
         }
 
+
         ?>
+        <div>
 
-        <div class="centrarContenido">
             <h2 id="tituloEspacios">Lugares disponibles a elegir!</h2>
-            <table class="centrarContenido tablaEspacios">
-                <div class="tablaDeEspacios">
-                    <tr>
-                        <td class="td">Numero de lugar</td>
-                        <td>Piso</td>
-                        <td>Tipo de Lugar</td>
-                        <td id="estado">Estado</td>
+            <div class="centrarContenido" id="contenidoTabla">
+                <table class="centrarContenido tablaEspacios" id="tablaDetalle">
+                    <thead>
+                        
+                        <tr>
+                            <th>Numero de lugar</th>
+                            <th>Piso</th>
+                            <th>Tipo de Lugar</th>
+                            <th>Estado</th>
 
-                    </tr>
-
+                        </tr>
+                    </thead>
                     <?php
                     $sql = "SELECT * FROM estacionamiento";
                     $result = mysqli_query($conn, $sql);
 
                     while ($mostrar = mysqli_fetch_array($result)) {
                     ?>
-                        <tr>
-                            <td><?php echo $mostrar['id_lugar'] ?></td>
-                            <td><?php echo $mostrar['piso'] ?></td>
-                            <td><?php echo $mostrar['tipoLugar'] ?></td>
-                            <td><?php echo $mostrar['estado'] ?></td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td><?php echo $mostrar['id_lugar'] ?></td>
+                                <td><?php echo $mostrar['piso'] ?></td>
+                                <td><?php echo $mostrar['tipoLugar'] ?></td>
+                                <td><?php echo $mostrar['estado'] ?></td>
+                            </tr>
+                        </tbody>
+
                     <?php
                     }
                     ?>
-                </div>
-            </table>
+                </table>
 
+            </div>
         </div>
     </div>
 
+
     <script src="../js/reserva.js"></script>
+    
 </body>
 
 </html>
