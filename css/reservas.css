@@ -53,6 +53,7 @@ body, a {
 @media (min-width: 768px) {
     .contenedor  {
        /* height: 100vh; /*100 viewport height, esto va a hacer que tome toda la altura, que tome toda la ventana grafica*/
+      
         display: grid;
         gap: 50px;
         grid-template-columns: repeat(2, 1fr);

@@ -139,13 +139,13 @@ $conn =  mysqli_connect('localhost:3308', 'root', '', 'parqueo');
 
 
         ?>
-        <div>
+        <div style="margin-top: 5%;">
 
             <h2 id="tituloEspacios">Lugares disponibles a elegir!</h2>
             <div class="centrarContenido" id="contenidoTabla">
                 <table class="centrarContenido tablaEspacios" id="tablaDetalle">
                     <thead>
-                        
+
                         <tr>
                             <th>Numero de lugar</th>
                             <th>Piso</th>
