@@ -139,7 +139,7 @@ $conn =  mysqli_connect('localhost:3308', 'root', '', 'parqueo');
 
 
         ?>
-        <div style="margin-top: 5%;">
+        <div id="cajaEspacios" style="margin-top: 5%;">
 
             <h2 id="tituloEspacios">Lugares disponibles a elegir!</h2>
             <div class="centrarContenido" id="contenidoTabla">
@@ -162,9 +162,9 @@ $conn =  mysqli_connect('localhost:3308', 'root', '', 'parqueo');
                     ?>
                         <tbody>
                             <tr>
-                                <td><?php echo $mostrar['id_lugar'] ?></td>
-                                <td><?php echo $mostrar['piso'] ?></td>
-                                <td><?php echo $mostrar['tipoLugar'] ?></td>
+                                <td class="colorPrimario"><?php echo $mostrar['id_lugar'] ?></td>
+                                <td class="colorPrimario"><?php echo $mostrar['piso'] ?></td>
+                                <td class="colorPrimario"><?php echo $mostrar['tipoLugar'] ?></td>
                                 <td><?php echo $mostrar['estado'] ?></td>
                             </tr>
                         </tbody>
