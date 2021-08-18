@@ -1,5 +1,5 @@
 <?php
-$conn =  mysqli_connect('localhost:3308', 'root', '', 'parqueo');
+$conn =  mysqli_connect('localhost', 'root', '', 'parqueo');
 
 
 
