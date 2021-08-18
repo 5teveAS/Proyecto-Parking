@@ -217,20 +217,33 @@ button, select {
 
 }
 
+.colorPrimario {
+    border: 1px solid var(--primario);
+}
 
 #contenidoTabla {
     color: var(--negro);
     width: 500px;
     height: 500px;
     overflow-y: scroll;
-    border: 1px solid #038507;
+    border: 3px solid var(--primario);
     padding: 10px;
 }
+
+@media (max-width: 768px) {
+    #contenidoTabla {
+        overflow-x: scroll;
+        width: auto;
+        height: auto;
+    }
+
+    }
+
 th, td {
     width: 100px;
 }
 th {
-    color: var(--primario);
+    color: var(--negro);
     font-weight: bold;
 
 }
